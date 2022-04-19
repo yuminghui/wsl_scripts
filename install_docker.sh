@@ -1,6 +1,6 @@
 #!/bin/bash
 sudo apt update
-sudo apt-get install -y \
+sudo apt -y install \
     apt-transport-https \
     ca-certificates \
     curl \
@@ -11,8 +11,8 @@ sudo add-apt-repository \
     $(lsb_release -cs) \
     stable"
 
-sudo apt-get update
-sudo apt-get -y install docker-ce
+sudo apt -y update
+sudo apt -y install docker-ce
 # install docker-composer
 curl -L https://get.daocloud.io/docker/compose/releases/download/1.25.0/docker-compose-`uname -s`-`uname -m` | sudo tee /usr/local/bin/docker-compose > /dev/null
 sudo chmod +x /usr/local/bin/docker-compose
